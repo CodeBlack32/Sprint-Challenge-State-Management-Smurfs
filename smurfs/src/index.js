@@ -1,6 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./components/App";
+import { createStore, applyMiddleware } from "redux";
+import { Provider, connect } from "react-redux";
+import { SmurfReducer } from "./Store/Reducer/SmurfReducer";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+import thunk from "redux-thunk";
+import "./index.css";
+import App from "./App";
+
+const store = createStore(SmurfReducer, applyMiddleware(thunk));
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  rootElement
+);
