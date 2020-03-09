@@ -1,24 +1,39 @@
 import React, { useReducer, useState } from "react";
 import { connect } from "react-redux";
 import { getSmurf } from "../Store/Actions/Action";
+import { initialState, SmurfReducer } from "../Store/Reducer";
 
 const SmurfForm = ({ getSmurf, name, age, height }) => {
+  const smurfChange = e => {
+    e.preventDefault(e);
+  };
+
   return (
     <div className="container">
       <input
         type="text"
-        name={name}
-        age={age}
-        height={height}
-        // onchange={newSmurf}
-        placeholder="Add New Smurf"
+        value={name}
+        onchange={smurfChange}
+        placeholder="Smurf Name"
+      />
+      <input
+        type="text"
+        value={age}
+        onchange={smurfChange}
+        placeholder="Smurf Age"
+      />
+      <input
+        type="text"
+        value={height}
+        onchange={smurfChange}
+        placeholder="Smurf Height"
       />
       <button onClick={getSmurf}>Add Smurf</button>
       <ul>
         <li>
-          {/* {state.items.map(item => {
-            return <p className="smurf-form">{item.}</p>;
-          })} */}
+          {state.smurfs.map(item => {
+            return <p className="smurf-form">{newSmurf}</p>;
+          })}
         </li>
       </ul>
     </div>
