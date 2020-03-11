@@ -1,13 +1,14 @@
 import React from "react";
 import SmurfForm from "./components/SmurfForm";
 import "./App.css";
+import Smurfs from "./components/Smurfs";
 
 function App() {
   return (
     <div className="App">
-      <h1>SMURFS! 2.0 W/ Redux</h1>
-      <div>Welcome to your state management version of Smurfs!</div>
+      <h1>SMURFS!</h1>
       <SmurfForm />
+      <Smurfs />
     </div>
   );
 }

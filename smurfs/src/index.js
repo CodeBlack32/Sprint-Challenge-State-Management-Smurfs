@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { createStore, applyMiddleware } from "redux";
-import { Provider, connect } from "react-redux";
+import { Provider } from "react-redux";
 import { SmurfReducer } from "./Store/Reducer/SmurfReducer";
 
 import thunk from "redux-thunk";
